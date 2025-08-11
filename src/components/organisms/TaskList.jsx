@@ -39,7 +39,7 @@ const TaskList = ({
           <div className="space-y-3">
             <AnimatePresence mode="popLayout">
               {incompleteTasks.map((task) => (
-                <TaskItem
+<TaskItem
                   key={task.Id}
                   task={task}
                   onToggleComplete={onToggleComplete}
@@ -75,7 +75,7 @@ const TaskList = ({
           
           <div className="space-y-3">
             <AnimatePresence mode="popLayout">
-              {completedTasks.map((task) => (
+{completedTasks.map((task) => (
                 <TaskItem
                   key={task.Id}
                   task={task}

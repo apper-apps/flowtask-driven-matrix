@@ -21,11 +21,12 @@ export const taskService = {
 
   async create(taskData) {
     await delay(400)
-    const newTask = {
+const newTask = {
       Id: Math.max(...tasks.map(t => t.Id), 0) + 1,
       title: taskData.title,
+      description: taskData.description || "",
       completed: false,
-      priority: taskData.priority || "medium",
+priority: taskData.priority || "medium",
       dueDate: taskData.dueDate || null,
       createdAt: new Date().toISOString(),
       completedAt: null

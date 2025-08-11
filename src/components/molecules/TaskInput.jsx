@@ -1,13 +1,14 @@
-import { useState } from "react"
-import { motion } from "framer-motion"
-import Input from "@/components/atoms/Input"
-import Button from "@/components/atoms/Button"
-import Select from "@/components/atoms/Select"
-import ApperIcon from "@/components/ApperIcon"
-import { format } from "date-fns"
+import React, { useState } from "react";
+import { motion } from "framer-motion";
+import { format } from "date-fns";
+import ApperIcon from "@/components/ApperIcon";
+import Select from "@/components/atoms/Select";
+import Button from "@/components/atoms/Button";
+import Input from "@/components/atoms/Input";
 
 const TaskInput = ({ onAddTask, className = "" }) => {
-  const [title, setTitle] = useState("")
+const [title, setTitle] = useState("")
+  const [description, setDescription] = useState("")
   const [priority, setPriority] = useState("medium")
   const [dueDate, setDueDate] = useState("")
   const [isExpanded, setIsExpanded] = useState(false)
@@ -16,14 +17,16 @@ const TaskInput = ({ onAddTask, className = "" }) => {
     e.preventDefault()
     if (!title.trim()) return
     
-    onAddTask({
+onAddTask({
       title: title.trim(),
+      description: description.trim(),
       priority,
       dueDate: dueDate || null
     })
     
-    // Reset form
+// Reset form
     setTitle("")
+    setDescription("")
     setPriority("medium")
     setDueDate("")
     setIsExpanded(false)
@@ -58,7 +61,25 @@ const TaskInput = ({ onAddTask, className = "" }) => {
               onFocus={() => setIsExpanded(true)}
               placeholder="What needs to be done?"
               className="text-lg border-0 shadow-none focus:ring-0 p-0 bg-transparent"
-            />
+/>
+            
+            {isExpanded && (
+              <motion.div
+                initial={{ opacity: 0, height: 0 }}
+                animate={{ opacity: 1, height: "auto" }}
+                className="mt-3"
+              >
+                <textarea
+                  value={description}
+                  onChange={(e) => setDescription(e.target.value)}
+                  placeholder="Add a detailed description (supports markdown)..."
+                  className="w-full min-h-[80px] p-3 border border-slate-200 rounded-lg resize-none focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary text-sm"
+                />
+                <p className="text-xs text-slate-500 mt-1">
+                  Supports markdown: **bold**, *italic*, `code`, - lists
+                </p>
+              </motion.div>
+            )}
           </div>
           
           <Button
@@ -130,7 +151,7 @@ const TaskInput = ({ onAddTask, className = "" }) => {
                     </Button>
                   </div>
                 </div>
-              </div>
+</div>
             </div>
             
             <div className="flex justify-end space-x-3 mt-6">

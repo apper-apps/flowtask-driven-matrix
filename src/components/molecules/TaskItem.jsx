@@ -8,7 +8,7 @@ import Input from "@/components/atoms/Input"
 import Select from "@/components/atoms/Select"
 import ApperIcon from "@/components/ApperIcon"
 import { cn } from "@/utils/cn"
-
+import ReactMarkdown from "react-markdown"
 const TaskItem = ({ 
   task, 
   onToggleComplete, 
@@ -17,10 +17,12 @@ const TaskItem = ({
   className = "" 
 }) => {
   const [isEditing, setIsEditing] = useState(false)
-  const [editTitle, setEditTitle] = useState(task.title)
+const [editTitle, setEditTitle] = useState(task.title)
+  const [editDescription, setEditDescription] = useState(task.description || "")
   const [editPriority, setEditPriority] = useState(task.priority)
-  const [editDueDate, setEditDueDate] = useState(task.dueDate || "")
+const [editDueDate, setEditDueDate] = useState(task.dueDate || "")
   const [showCelebration, setShowCelebration] = useState(false)
+  const [isDescriptionExpanded, setIsDescriptionExpanded] = useState(false)
   
   const handleToggleComplete = () => {
     if (!task.completed) {
@@ -31,8 +33,9 @@ const TaskItem = ({
   }
   
   const handleSaveEdit = () => {
-    onUpdate(task.Id, {
+onUpdate(task.Id, {
       title: editTitle.trim(),
+      description: editDescription.trim(),
       priority: editPriority,
       dueDate: editDueDate || null
     })
@@ -40,7 +43,8 @@ const TaskItem = ({
   }
   
   const handleCancelEdit = () => {
-    setEditTitle(task.title)
+setEditTitle(task.title)
+    setEditDescription(task.description || "")
     setEditPriority(task.priority)
     setEditDueDate(task.dueDate || "")
     setIsEditing(false)
@@ -107,12 +111,26 @@ const TaskItem = ({
       <div className="p-4">
         {isEditing ? (
           <div className="space-y-4">
-            <Input
-              value={editTitle}
-              onChange={(e) => setEditTitle(e.target.value)}
-              placeholder="Task title"
-              autoFocus
-            />
+<div className="space-y-3">
+              <Input
+                value={editTitle}
+                onChange={(e) => setEditTitle(e.target.value)}
+                placeholder="Task title"
+                autoFocus
+              />
+              
+              <div>
+                <textarea
+                  value={editDescription}
+                  onChange={(e) => setEditDescription(e.target.value)}
+                  placeholder="Add a detailed description (supports markdown)..."
+                  className="w-full min-h-[80px] p-3 border border-slate-200 rounded-lg resize-none focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary text-sm"
+                />
+                <p className="text-xs text-slate-500 mt-1">
+                  Supports markdown: **bold**, *italic*, `code`, - lists
+                </p>
+              </div>
+            </div>
             
             <div className="flex space-x-3">
               <Select
@@ -152,8 +170,56 @@ const TaskItem = ({
                 "font-medium text-slate-900 truncate",
                 task.completed && "line-through text-slate-500"
               )}>
-                {task.title}
+{task.title}
               </h3>
+              
+              {task.description && (
+                <div className="mt-2">
+                  <div className={cn(
+                    "prose prose-sm max-w-none text-slate-600",
+                    task.completed && "text-slate-400",
+                    !isDescriptionExpanded && "line-clamp-2"
+                  )}>
+                    <ReactMarkdown
+                      components={{
+                        p: ({children}) => <p className="mb-1 last:mb-0">{children}</p>,
+                        ul: ({children}) => <ul className="mb-1 pl-4 list-disc">{children}</ul>,
+                        ol: ({children}) => <ol className="mb-1 pl-4 list-decimal">{children}</ol>,
+                        li: ({children}) => <li className="mb-0.5">{children}</li>,
+                        strong: ({children}) => <strong className="font-semibold">{children}</strong>,
+                        em: ({children}) => <em className="italic">{children}</em>,
+                        code: ({children}) => <code className="px-1 py-0.5 bg-slate-100 rounded text-xs font-mono">{children}</code>,
+                        h1: ({children}) => <h1 className="text-lg font-semibold mb-1">{children}</h1>,
+                        h2: ({children}) => <h2 className="text-base font-semibold mb-1">{children}</h2>,
+                        h3: ({children}) => <h3 className="text-sm font-semibold mb-1">{children}</h3>
+                      }}
+                    >
+                      {task.description}
+                    </ReactMarkdown>
+                  </div>
+                  
+                  {task.description.length > 100 && (
+                    <Button
+                      variant="ghost"
+                      size="sm"
+                      onClick={() => setIsDescriptionExpanded(!isDescriptionExpanded)}
+                      className="mt-1 h-auto p-0 text-xs text-slate-500 hover:text-slate-700"
+                    >
+                      {isDescriptionExpanded ? (
+                        <>
+                          <ApperIcon name="ChevronUp" className="w-3 h-3 mr-1" />
+                          Show less
+                        </>
+                      ) : (
+                        <>
+                          <ApperIcon name="ChevronDown" className="w-3 h-3 mr-1" />
+                          Show more
+                        </>
+                      )}
+                    </Button>
+                  )}
+                </div>
+              )}
               
               <div className="flex items-center space-x-3 mt-1">
                 <Badge variant={task.priority} size="xs">

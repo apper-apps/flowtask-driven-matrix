@@ -1,7 +1,8 @@
 [
   {
     "Id": 1,
-    "title": "Review quarterly budget reports",
+"title": "Review quarterly budget reports",
+    "description": "Analyze Q4 financials, compare against projections, and prepare summary for board meeting. Focus on **revenue growth** and cost optimization opportunities.",
     "completed": false,
     "priority": "high",
     "dueDate": "2024-01-15",
@@ -10,7 +11,8 @@
   },
   {
     "Id": 2,
-    "title": "Schedule team meeting for project kickoff",
+"title": "Schedule team meeting for project kickoff",
+    "description": "Coordinate with all stakeholders:\n- Development team\n- Design team\n- Product managers\n- QA team\n\nFind suitable time slot for 2-hour session.",
     "completed": false,
     "priority": "medium",
     "dueDate": "2024-01-12",
@@ -19,7 +21,8 @@
   },
   {
     "Id": 3,
-    "title": "Update website homepage content",
+"title": "Update website homepage content",
+    "description": "Refresh homepage with latest product updates and customer testimonials. Include new hero section and update call-to-action buttons.",
     "completed": true,
     "priority": "low",
     "dueDate": "2024-01-08",
@@ -28,7 +31,8 @@
   },
   {
     "Id": 4,
-    "title": "Prepare presentation for client meeting",
+"title": "Prepare presentation for client meeting",
+    "description": "Create comprehensive presentation covering:\n\n## Project Overview\n- Current status\n- Key milestones achieved\n- Upcoming deliverables\n\n## Technical Implementation\n- Architecture decisions\n- Performance metrics\n- Security measures\n\nInclude demo videos and live examples.",
     "completed": false,
     "priority": "high",
     "dueDate": "2024-01-14",
@@ -37,7 +41,8 @@
   },
   {
     "Id": 5,
-    "title": "Research new project management tools",
+"title": "Research new project management tools",
+    "description": "Evaluate alternatives to current system. Consider factors like team size, integration capabilities, and cost. Tools to research: *Asana*, *Monday.com*, *Linear*, and `Notion`.",
     "completed": false,
     "priority": "medium",
     "dueDate": "2024-01-18",
@@ -46,7 +51,8 @@
   },
   {
     "Id": 6,
-    "title": "Send weekly progress report to stakeholders",
+"title": "Send weekly progress report to stakeholders",
+    "description": "Weekly status update including completed tasks, blockers, and next week's priorities. Include metrics dashboard and team velocity chart.",
     "completed": true,
     "priority": "medium",
     "dueDate": "2024-01-05",
@@ -55,7 +61,8 @@
   },
   {
     "Id": 7,
-    "title": "Organize team building event",
+"title": "Organize team building event",
+    "description": "Plan quarterly team building activity. Options:\n1. **Escape room** - downtown location\n2. **Cooking class** - hands-on experience\n3. **Outdoor adventure** - weather permitting\n\nBudget: $150 per person, survey team preferences.",
     "completed": false,
     "priority": "low",
     "dueDate": "2024-01-25",
@@ -64,7 +71,8 @@
   },
   {
     "Id": 8,
-    "title": "Review and approve marketing campaign",
+"title": "Review and approve marketing campaign",
+    "description": "Final review of Q1 marketing materials:\n- Email templates\n- Social media content\n- Landing page designs\n- Ad copy variations\n\n**Critical:** Ensure brand guidelines compliance and legal approval.",
     "completed": false,
     "priority": "high",
     "dueDate": "2024-01-13",
