@@ -32,7 +32,7 @@ const TaskList = ({
       {incompleteTasks.length > 0 && (
         <div>
           <h2 className="text-lg font-semibold text-slate-900 mb-4 flex items-center">
-            <ApperIcon name="Circle" className="w-5 h-5 mr-2 text-primary" />
+<ApperIcon name="Circle" className="w-5 h-5 mr-2 text-purple-500" />
             Active Tasks ({incompleteTasks.length})
           </h2>
           
@@ -58,7 +58,7 @@ const TaskList = ({
         <div>
           <div className="flex items-center justify-between mb-4">
             <h2 className="text-lg font-semibold text-slate-900 flex items-center">
-              <ApperIcon name="CheckCircle" className="w-5 h-5 mr-2 text-success" />
+<ApperIcon name="CheckCircle" className="w-5 h-5 mr-2 text-emerald-500" />
               Completed Tasks ({completedTasks.length})
             </h2>
             
@@ -95,7 +95,7 @@ const TaskList = ({
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          className="bg-gradient-to-r from-primary/5 via-secondary/5 to-accent/5 rounded-xl p-6 border border-primary/10"
+className="bg-gradient-to-r from-violet-50 via-purple-50 to-pink-50 rounded-xl p-6 border border-purple-200/30"
         >
           <div className="flex items-center justify-between">
             <div>
@@ -106,7 +106,7 @@ const TaskList = ({
             </div>
             
             <div className="text-right">
-              <div className="text-2xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+<div className="text-2xl font-bold bg-gradient-to-r from-violet-600 to-pink-600 bg-clip-text text-transparent">
                 {Math.round((completedTasks.length / tasks.length) * 100)}%
               </div>
               <div className="text-sm text-slate-500">Complete</div>
@@ -119,7 +119,7 @@ const TaskList = ({
                 initial={{ width: 0 }}
                 animate={{ width: `${(completedTasks.length / tasks.length) * 100}%` }}
                 transition={{ duration: 0.8, ease: "easeOut" }}
-                className="h-2 rounded-full bg-gradient-to-r from-primary via-secondary to-accent"
+className="h-2 rounded-full bg-gradient-to-r from-violet-500 via-purple-500 to-pink-500"
               />
             </div>
           </div>

@@ -222,21 +222,21 @@ const TasksPage = () => {
           >
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
               <div className="text-center">
-                <div className="text-3xl font-bold text-primary mb-2">
+<div className="text-3xl font-bold bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent mb-2">
                   {tasks.filter(t => !t.completed).length}
                 </div>
                 <div className="text-slate-600">Active Tasks</div>
               </div>
               
               <div className="text-center">
-                <div className="text-3xl font-bold text-success mb-2">
+<div className="text-3xl font-bold bg-gradient-to-r from-emerald-500 to-green-500 bg-clip-text text-transparent mb-2">
                   {tasks.filter(t => t.completed).length}
                 </div>
                 <div className="text-slate-600">Completed</div>
               </div>
               
               <div className="text-center">
-                <div className="text-3xl font-bold bg-gradient-to-r from-accent to-secondary bg-clip-text text-transparent mb-2">
+<div className="text-3xl font-bold bg-gradient-to-r from-violet-600 via-purple-600 to-pink-600 bg-clip-text text-transparent mb-2">
                   {tasks.length > 0 ? Math.round((tasks.filter(t => t.completed).length / tasks.length) * 100) : 0}%
                 </div>
                 <div className="text-slate-600">Progress</div>

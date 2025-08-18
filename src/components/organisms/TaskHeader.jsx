@@ -34,8 +34,8 @@ const TaskHeader = ({
     <div
         className="flex flex-col xl:flex-row xl:items-center xl:justify-between gap-6">
         <div className="flex-shrink-0">
-            <h1
-                className="text-3xl font-bold bg-gradient-to-r from-slate-900 via-primary to-secondary bg-clip-text text-transparent">FlowTask
+<h1
+                className="text-3xl font-bold bg-gradient-to-r from-violet-600 via-purple-600 to-pink-600 bg-clip-text text-transparent">FlowTask
                           </h1>
             <p className="text-slate-600 mt-1">
                 {tasksCount} {tasksCount === 1 ? "task" : "tasks"}in your workflow

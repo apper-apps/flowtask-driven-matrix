@@ -29,8 +29,8 @@ const Checkbox = forwardRef(({
         className={cn(
           "w-5 h-5 rounded-md border-2 transition-all duration-200 flex items-center justify-center",
           checked 
-            ? "bg-gradient-to-br from-primary to-primary-600 border-primary shadow-lg" 
-            : "border-slate-300 hover:border-primary bg-white",
+? "bg-gradient-to-br from-violet-500 to-purple-600 border-purple-500 shadow-lg" 
+            : "border-slate-300 hover:border-purple-400 bg-white",
           className
         )}
       >

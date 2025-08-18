@@ -13,7 +13,7 @@ const Select = forwardRef(({
         ref={ref}
         className={cn(
           "w-full px-4 py-3 pr-10 text-slate-900 bg-white border border-slate-200 rounded-xl transition-all duration-200 appearance-none cursor-pointer",
-          "focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary",
+"focus:outline-none focus:ring-2 focus:ring-purple-400/50 focus:border-purple-400",
           "hover:border-slate-300",
           className
         )}

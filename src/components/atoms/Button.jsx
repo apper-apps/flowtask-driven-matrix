@@ -13,10 +13,10 @@ const Button = forwardRef(({
   const baseStyles = "inline-flex items-center justify-center font-medium transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed"
   
   const variants = {
-    primary: "bg-gradient-to-r from-primary to-primary-600 hover:from-primary-600 hover:to-primary-700 text-white shadow-md hover:shadow-lg focus:ring-primary/50",
-    secondary: "bg-gradient-to-r from-secondary to-secondary-600 hover:from-secondary-600 hover:to-secondary-700 text-white shadow-md hover:shadow-lg focus:ring-secondary/50",
-    outline: "border-2 border-slate-300 hover:border-primary hover:text-primary text-slate-700 bg-white hover:bg-primary/5 focus:ring-primary/50",
-    ghost: "text-slate-600 hover:text-primary hover:bg-primary/10 focus:ring-primary/50",
+primary: "bg-gradient-to-r from-violet-500 to-purple-600 hover:from-violet-600 hover:to-purple-700 text-white shadow-md hover:shadow-lg focus:ring-purple-400/50",
+    secondary: "bg-gradient-to-r from-purple-500 to-pink-600 hover:from-purple-600 hover:to-pink-700 text-white shadow-md hover:shadow-lg focus:ring-pink-400/50",
+    outline: "border-2 border-slate-300 hover:border-purple-500 hover:text-purple-600 text-slate-700 bg-white hover:bg-purple-50 focus:ring-purple-400/50",
+    ghost: "text-slate-600 hover:text-purple-600 hover:bg-purple-50 focus:ring-purple-400/50",
     danger: "bg-gradient-to-r from-red-500 to-red-600 hover:from-red-600 hover:to-red-700 text-white shadow-md hover:shadow-lg focus:ring-red-500/50"
   }
   

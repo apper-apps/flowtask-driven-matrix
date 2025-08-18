@@ -93,8 +93,8 @@ setEditTitle(task.title)
           <motion.div
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
-            exit={{ opacity: 0, scale: 0.8 }}
-            className="absolute inset-0 bg-gradient-to-r from-accent/20 via-secondary/20 to-primary/20 rounded-xl flex items-center justify-center z-10 pointer-events-none"
+exit={{ opacity: 0, scale: 0.8 }}
+            className="absolute inset-0 bg-gradient-to-r from-pink-200/40 via-purple-200/40 to-violet-200/40 rounded-xl flex items-center justify-center z-10 pointer-events-none"
           >
             <motion.div
               initial={{ scale: 0, rotate: 0 }}
@@ -124,7 +124,7 @@ setEditTitle(task.title)
                   value={editDescription}
                   onChange={(e) => setEditDescription(e.target.value)}
                   placeholder="Add a detailed description (supports markdown)..."
-                  className="w-full min-h-[80px] p-3 border border-slate-200 rounded-lg resize-none focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary text-sm"
+className="w-full min-h-[80px] p-3 border border-slate-200 rounded-lg resize-none focus:outline-none focus:ring-2 focus:ring-purple-400/30 focus:border-purple-400 text-sm"
                 />
                 <p className="text-xs text-slate-500 mt-1">
                   Supports markdown: **bold**, *italic*, `code`, - lists
@@ -231,7 +231,7 @@ setEditTitle(task.title)
                     "flex items-center space-x-1 text-xs",
                     dueDateStatus === "overdue" && !task.completed && "text-red-600",
                     dueDateStatus === "today" && "text-amber-600",
-                    dueDateStatus === "tomorrow" && "text-blue-600",
+dueDateStatus === "tomorrow" && "text-violet-600",
                     dueDateStatus === "future" && "text-slate-500"
                   )}>
                     <ApperIcon name="Calendar" className="w-3 h-3" />

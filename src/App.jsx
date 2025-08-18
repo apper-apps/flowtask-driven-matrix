@@ -5,7 +5,7 @@ import TasksPage from "@/components/pages/TasksPage"
 function App() {
   return (
     <BrowserRouter>
-      <div className="min-h-screen bg-gradient-to-br from-white via-slate-50 to-indigo-50/30">
+<div className="min-h-screen bg-gradient-to-br from-purple-50 via-pink-50 to-indigo-100">
         <Routes>
           <Route path="/" element={<TasksPage />} />
         </Routes>
